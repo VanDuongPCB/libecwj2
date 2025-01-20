@@ -293,15 +293,16 @@ delayimp.lib
 elseif(CMAKE_SYSTEM MATCHES Linux)
 add_compile_definitions(${PROJECT_NAME} _GNU_SOURCE POSIX _REENTRANT UNICODE LINUX _LARGEFILE_SOURCE _LARGEFILE64_SOURCE _FILE_OFFSET_BITS=64)
 add_library(${PROJECT_NAME} STATIC ${NCSJP2_SOURCES} ${NCSECW_SOURCES} ${SHARED_SOURCES} ${LCMS_SOURCES} ${NCSGDT2_SOURCES} ${CNET_SOURCES} ${NCSUTIL_SOURCES} ${ECWC_SOURCES} ${ECW_HEADERS})
-
+target_link_libraries(${PROJECT_NAME} PRIVATE
+/home/vandu/Workspaces/LibECWJ2/libecwj2/Build/Debug/libecwj2.a
+)
 
 
 elseif(CMAKE_SYSTEM MATCHES Darwin)
-add_compile_definitions(${PROJECT_NAME} UNICODE POSIX MACOSX MACINTOSH)
+add_compile_definitions(${PROJECT_NAME} UNICODE POSIX MACOSX)
 add_library(${PROJECT_NAME} STATIC ${NCSJP2_SOURCES} ${NCSECW_SOURCES} ${SHARED_SOURCES} ${LCMS_SOURCES} ${NCSGDT2_SOURCES} ${CNET_SOURCES} ${NCSUTIL_SOURCES} ${ECWC_SOURCES} ${ECW_HEADERS})
-
-else()
-
+target_link_libraries(${PROJECT_NAME} PRIVATE
+/Users/thinh.nguyen4/Documents/Workspaces/LibECWJ2/libecwj2/Build/Debug/libecwj2.a
 endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")

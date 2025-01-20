@@ -52,6 +52,10 @@
 #include <sys/time.h>
 #endif
 
+#ifdef MACOS
+#include <sys/time.h>
+#endif
+
 #ifdef MACINTOSH
 #	ifdef MAC_PREEMPTIVE
 #		include <Multiprocessing.h>
