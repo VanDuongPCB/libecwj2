@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <stdint.h>
+#include <vector>
 
 #include "NCSECWClient.h"
 #include "NCSErrors.h"
