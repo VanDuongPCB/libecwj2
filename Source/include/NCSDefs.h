@@ -435,13 +435,13 @@ static NCS_INLINE int wcsicmp(const wchar_t *s1, const wchar_t *s2)
 	return(towlower(*s1) - towlower(*s2));
 }
 
-static NCS_INLINE wchar_t *wcsdup(const wchar_t *s1)
-{
-	size_t len = (wcslen(s1) + 1) * sizeof(wchar_t);
-	wchar_t *s2 = (wchar_t*)malloc(len);
-	memcpy(s2, s1, len);
-	return(s2);
-}
+// static NCS_INLINE wchar_t *wcsdup(const wchar_t *s1)
+// {
+// 	size_t len = (wcslen(s1) + 1) * sizeof(wchar_t);
+// 	wchar_t *s2 = (wchar_t*)malloc(len);
+// 	memcpy(s2, s1, len);
+// 	return(s2);
+// }
 
 #endif /* SOLARIS || MACOSX */
 
