@@ -967,7 +967,8 @@ void NCSThreadLSSetValue(NCSThreadLSKey Key, void *pValue)
 #elif defined(PALM)
 #elif defined(MACINTOSH)
 #elif defined(POSIX)
-	pthread_setspecific(*Key, pValue);
+    if(Key)
+        pthread_setspecific(*Key, pValue);
 #else
 ERROR: Need to code NCSThreadLSSetValue() in NCSUtil/thread.c
 #endif
