@@ -412,7 +412,7 @@ static NCS_INLINE char *NCSW2AHelper(char *lpa, const wchar_t *lpw, int nChars)
 #define CHAR_STRING(lpw)	(((lpw) == NULL) ? NULL : NCSW2AHelper((char*) alloca(((int)wcslen(lpw)+1)*2), (lpw), ((int)wcslen(lpw)+1)*2))
 
 #if defined POSIX
-static NCS_INLINE int wcsnicmp(const wchar_t *s1, const wchar_t *s2, int nChars)
+static NCS_INLINE int ncs_wcsnicmp(const wchar_t *s1, const wchar_t *s2, int nChars)
 {
 	int i=0;
 	while ((*s2 != L'\0') && (towlower(*s1) == towlower(*s2)) && (i<nChars)) {
@@ -426,7 +426,7 @@ static NCS_INLINE int wcsnicmp(const wchar_t *s1, const wchar_t *s2, int nChars)
 
 #if defined SOLARIS || defined MACOSX
 
-static NCS_INLINE int wcsicmp(const wchar_t *s1, const wchar_t *s2)
+static NCS_INLINE int ncs_wcsicmp(const wchar_t *s1, const wchar_t *s2)
 {
 	while ((*s2 != L'\0') && (towlower(*s1) == towlower(*s2))) {
 		s1++;
@@ -435,13 +435,13 @@ static NCS_INLINE int wcsicmp(const wchar_t *s1, const wchar_t *s2)
 	return(towlower(*s1) - towlower(*s2));
 }
 
-// static NCS_INLINE wchar_t *wcsdup(const wchar_t *s1)
-// {
-// 	size_t len = (wcslen(s1) + 1) * sizeof(wchar_t);
-// 	wchar_t *s2 = (wchar_t*)malloc(len);
-// 	memcpy(s2, s1, len);
-// 	return(s2);
-// }
+static NCS_INLINE wchar_t *ncs_wcsdup(const wchar_t *s1)
+{
+	size_t len = (wcslen(s1) + 1) * sizeof(wchar_t);
+	wchar_t *s2 = (wchar_t*)malloc(len);
+	memcpy(s2, s1, len);
+	return(s2);
+}
 
 #endif /* SOLARIS || MACOSX */
 
