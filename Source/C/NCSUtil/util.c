@@ -52,7 +52,7 @@
 #include <sys/time.h>
 #endif
 
-#ifdef MACOS
+#ifdef MACOSX
 #include <sys/time.h>
 #endif
 
