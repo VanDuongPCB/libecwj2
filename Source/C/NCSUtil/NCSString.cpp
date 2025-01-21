@@ -154,7 +154,7 @@ bool CNCSString::CompareNoCase( const CNCSString& input, int nChars )
 int CNCSString::CompareNoCase( const CNCSString& first, const CNCSString& second )
 {
 #ifdef NCS_BUILD_UNICODE
-	return wcsicmp( first.c_str(), second.c_str() );
+	return ncs_wcsicmp( first.c_str(), second.c_str() );
 #else
 	return stricmp( first.c_str(), second.c_str() );
 #endif
@@ -163,7 +163,7 @@ int CNCSString::CompareNoCase( const CNCSString& first, const CNCSString& second
 int CNCSString::CompareNoCase( const CNCSString& first, const CNCSString& second, int nChars )
 {
 #ifdef NCS_BUILD_UNICODE
-	return wcsnicmp( first.c_str(), second.c_str(), nChars );
+	return ncs_wcsnicmp( first.c_str(), second.c_str(), nChars );
 #else
 	return strnicmp( first.c_str(), second.c_str(), nChars );
 #endif
