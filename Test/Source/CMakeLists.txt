@@ -12,7 +12,7 @@ add_executable(${PROJECT_NAME} main.cpp)
 
 if(CMAKE_SYSTEM MATCHES Windows)
     target_link_libraries(${PROJECT_NAME} PRIVATE
-    D:/Workspaces/LibECWJ2/libecwj2/Build/Win64/libecwj2.lib
+    ../../../Build/Release/libecwj2.lib
     imagehlp.lib
     version.lib
     Crypt32.lib
@@ -33,8 +33,17 @@ if(CMAKE_SYSTEM MATCHES Windows)
     winspool.lib
     delayimp.lib
     )
+
+
 elseif(CMAKE_SYSTEM MATCHES Linux)
+target_link_libraries(${PROJECT_NAME} PRIVATE
+../../../Build/Release/libecwj2.a
+)
+
 
 elseif(CMAKE_SYSTEM MATCHES Darwin)
+target_link_libraries(${PROJECT_NAME} PRIVATE
+../../../Build/Release/libecwj2.a
+)
 
 endif()
