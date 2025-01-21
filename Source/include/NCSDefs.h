@@ -424,7 +424,7 @@ static NCS_INLINE int ncs_wcsnicmp(const wchar_t *s1, const wchar_t *s2, int nCh
 }
 #endif
 
-#if defined SOLARIS || defined MACOSX
+#if defined SOLARIS || defined MACOSX || defined LINUX
 
 static NCS_INLINE int ncs_wcsicmp(const wchar_t *s1, const wchar_t *s2)
 {
