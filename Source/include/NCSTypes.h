@@ -174,12 +174,12 @@ typedef unsigned int	UINT32;		/* 32 bit unsigned integer		*/
 #if defined(SOLARIS)
 
 #define DWORD UINT32
-typedef struct tagRECT {
-	long left;
-	long top;
-	long right;
-	long bottom;
-} RECT, *PRECT;
+// typedef struct tagRECT {  // // <= don't use but conflict with Argon
+// 	long left;
+// 	long top;
+// 	long right;
+// 	long bottom;
+// } RECT, *PRECT;
 
 typedef longlong_t 	INT64;		/* 64 bit signed integer		*/
 typedef u_longlong_t 	UINT64;		/* 64 bit unsigned integer		*/
@@ -187,12 +187,12 @@ typedef u_longlong_t 	UINT64;		/* 64 bit unsigned integer		*/
 #elif defined(LINUX)
 
 #define DWORD UINT32
-typedef struct tagRECT {
-	long left;
-	long top;
-	long right;
-	long bottom;
-} RECT, *PRECT;
+// typedef struct tagRECT { // <= don't use but conflict with Argon
+// 	long left;
+// 	long top;
+// 	long right;
+// 	long bottom;
+// } RECT, *PRECT;
 
 typedef int64_t		INT64;
 typedef u_int64_t	UINT64;
