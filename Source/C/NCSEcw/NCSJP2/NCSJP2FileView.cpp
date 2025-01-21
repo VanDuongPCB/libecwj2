@@ -179,7 +179,7 @@ CNCSError CNCSJP2FileView::Open(wchar_t *pURLPath, bool bProgressiveDisplay, boo
 		bool bTestECW = true;
 		
 		for(int i = 0; i < sizeof(exts) / sizeof(exts[0]); i++) {
-			if(wcsicmp(pURLPath + wcslen(pURLPath) - wcslen(exts[i]), exts[i]) == 0) {
+			if(ncs_wcsicmp(pURLPath + wcslen(pURLPath) - wcslen(exts[i]), exts[i]) == 0) {
 				bTestECW = false;
 				break;
 			}
