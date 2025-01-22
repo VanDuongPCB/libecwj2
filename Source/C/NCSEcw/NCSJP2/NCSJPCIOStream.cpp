@@ -71,7 +71,7 @@ CNCSError CNCSJPCIOStream::Open(wchar_t*pName, bool bWrite)
 CNCSError CNCSJPCIOStream::Open(char *pName, bool bWrite)
 {
 #ifdef NCS_BUILD_UNICODE
-	m_pName = wcsdup(OS_STRING(pName));
+	m_pName = ncs_wcsdup(OS_STRING(pName));
 #else
     m_pName = (char *) malloc(strlen(pName)+1);
     strcpy(m_pName, pName);

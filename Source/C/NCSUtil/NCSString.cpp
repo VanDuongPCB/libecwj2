@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
-
+#include "NCSDefs.h"
 #ifndef WIN32
 #define _vsnwprintf vswprintf
 #define _vsnprintf vsnprintf
